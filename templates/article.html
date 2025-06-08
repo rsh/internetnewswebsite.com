@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - Internet News Website{% endblock %}
+
+{% block content %}
+<main class="my-4">
+    <article>
+        <h3>{{ article.title }}</h3>
+        <p class="article-date">{{ article.date_created }}</p>
+        <p class="article-summary">{{ article.summary_med }}</p>
+        <div class="separator"></div>
+        <div>
+            {{ article.body | safe }}
+        </div>
+    </article>
+</main>
+{% endblock %}
