@@ -1,0 +1,15 @@
+services:
+  internetnewswebsite:
+    image: internetnewswebsite:latest
+    container_name: internetnewswebsite
+    restart: unless-stopped
+    environment:
+      - FLASK_APP=internetnewswebsite
+    command: >
+      sh -c "gunicorn --workers 3 --bind 0.0.0.0:5000 internetnewswebsite:app"
+    networks:
+      - caddy_network
+
+networks:
+  caddy_network:
+    external: true
