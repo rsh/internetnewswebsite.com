@@ -5,7 +5,9 @@
 {% block content %}
 <main class="my-4">
     <article>
-        <h3>{{ article.title_full }}</h3>
+        <div class="col article-title">
+            <h3>{{ article.title_full }}</h3>
+        </div>
         <p class="article-date">{{ article.date_created }}</p>
         <p class="article-summary">{{ article.summary_full }}</p>
         <div class="separator"></div>

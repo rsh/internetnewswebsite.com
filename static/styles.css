@@ -1,11 +1,11 @@
-
 body {
     font-family: "Libre Baskerville", serif;
     font-weight: 400;
     font-style: normal;
 }
 
-.article-summary h2 a {
+.article-title h3,
+.article-title h3 a {
     color: black;
     font-size: 1.5rem;
     font-weight: 600;
@@ -28,8 +28,7 @@ h2 {
     font-weight: bold;
 }
 
-
 .container {
     max-width: 800px;
-    margin: auto; /* Center content */
+    margin: auto;
 }
