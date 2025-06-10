@@ -6,10 +6,6 @@ services:
     environment:
       - FLASK_APP=internetnewswebsite
     command: >
-      sh -c "gunicorn --workers 3 --bind 0.0.0.0:5000 internetnewswebsite:app"
-    networks:
-      - caddy_network
-
-networks:
-  caddy_network:
-    external: true
+      sh -c "gunicorn --workers 3 --bind 0.0.0.0:5000 app:app"
+    volumes:
+      - ./articles:/app/articles

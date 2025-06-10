@@ -18,4 +18,4 @@ COPY . .
 # Expose the application port
 EXPOSE 5000
 
-CMD ["uwsgi", "--http", "0.0.0.0:5000", "--master", "--module", "app:app"]
+CMD ["gunicorn", "--workers", "333", "--bind", "0.0.0.0:5000", "app:app"]
