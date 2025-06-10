@@ -9,3 +9,9 @@ services:
       sh -c "gunicorn --workers 3 --bind 0.0.0.0:5000 app:app"
     volumes:
       - ./articles:/app/articles
+    networks:
+      - caddy_network
+
+networks:
+  caddy_network:
+    external: true
