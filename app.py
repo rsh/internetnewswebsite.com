@@ -16,11 +16,6 @@ def replace_proper_nouns(article_metadata, proper_nouns):
                 article_value_old = article_value
                 article_value = article_value.replace(article_proper_noun, proper_noun_value)
 
-                if article_value != article_value_old:
-                    print(f"Replaced '{proper_noun_key}' with '{proper_noun_value}' in {article_key}")
-                else:
-                    print(f"No replacement for '{proper_noun_key}' in {article_key}")
-
                 article_metadata[article_key] = article_value
     return article_metadata
 
@@ -54,10 +49,8 @@ def front_page():
     for filename in os.listdir(ARTICLES_DIR):
         if filename.endswith(".json"):
             with open(os.path.join(ARTICLES_DIR, filename), "r") as json_file:
-                print(f"Loading metadata from {filename}")
                 metadata = json.load(json_file)
                 metadata = replace_proper_nouns(metadata, proper_nouns)
-                print(metadata)
                 articles.append({
                     "title_frontpage": metadata["title_frontpage"],
                     "summary_frontpage": metadata["summary_frontpage"],
