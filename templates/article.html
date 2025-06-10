@@ -5,9 +5,9 @@
 {% block content %}
 <main class="my-4">
     <article>
-        <h3>{{ article.title }}</h3>
+        <h3>{{ article.title_full }}</h3>
         <p class="article-date">{{ article.date_created }}</p>
-        <p class="article-summary">{{ article.summary_med }}</p>
+        <p class="article-summary">{{ article.summary_full }}</p>
         <div class="separator"></div>
         <div>
             {{ article.body | safe }}

@@ -2,7 +2,7 @@ venv/
 articles/
 
 # Ignore Python cache files
-__pycache__/
+&&%%pycache&&%%/
 *.pyc
 *.pyo
 

@@ -18,4 +18,4 @@ COPY . .
 # Expose the application port
 EXPOSE 5000
 
-CMD ["uwsgi", "--http", "0.0.0.0:5000", "--gevent", "1000", "--http-websockets", "--master", "--wsgi-file", "app.py", "--callable", "app"]
+CMD ["uwsgi", "--http", "0.0.0.0:5000", "--master", "--module", "app:app"]
